@@ -1,11 +1,19 @@
-import { BrowserRouter as Router,Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router,Routes, Route, Outlet } from "react-router-dom";
 import '@mui/material/styles';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-// Layout
+// Layouts
+import Header from "./components/common/Header";
+import Footer from "./components/common/Footer";
+
+
+// Pages principales
+import Homebody from "./pages/Homebody";
+import ProductCard from "./pages/ProductCard";
+
 // Produits
 import Insertproduit from "./components/produits/Insertproduit";
 import Listproduit from "./components/produits/Listproduit";
@@ -20,13 +28,34 @@ import Insertscategorie from "./components/scategories/Insertscategorie";
 import Editscategorie from "./components/scategories/Editscategorie";
 // Marques
 import Listmarque from "./components/marques/Listmarque";
-import Insertmarque from "./components/marques/Insertmarque"
+import Insertmarque from "./components/marques/Insertmarque";
 import Editmarque from "./components/marques/Editmarque";
 
-import ProductCard from "./pages/ProductCard";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Homebody from "./components/Homebody";
+// Authentification
+import Login from "./components/authentification/Login";
+import Logout from "./components/authentification/Logout";
+import Register from "./components/authentification/Register";
+
+
+
+import AdminHome from "./components/admin/AdminHome";
+import ProductAdmin from "./components/admin/ProductAdmin";
+import CategoryAdmin from "./components/admin/CategoryAdmin";
+import ScategoryAdmin from "./components/admin/ScategoryAdmin";
+import MarqueAdmin from "./components/admin/MarqueAdmin";
+import OrderAdmin from "./components/admin/OrderAdmin";
+import UserAdmin from "./components/admin/UserAdmin";
+import Page from "./pages/Page";
+
+// 🔹 Layout Principal (avec Header et Footer)
+const MainLayout = () => (
+  <>
+    <Header />
+    <Outlet />
+    <Footer />
+  </>
+);
+
 
 
 function App() {
@@ -36,24 +65,57 @@ function App() {
       <div>
         
          <Router>
-          <Header/>
+          
          <Routes>
-         <Route path="/" element={<Homebody />} />
-          <Route path="produits" element={<Listproduit />} />
-          <Route path="produits/add" element={<Insertproduit />} />
-          <Route path="produits/edit/:id" element={<Editproduit />} />
-            <Route path="categories" element={<Listcategorie />} />
-            <Route path="categories/add" element={<Insertcategorie />} />
-            <Route path="categories/edit/:id" element={<Editcategorie />} />
-            <Route path="scategories" element={<Listscategorie />} />
-            <Route path="scategories/add" element={<Insertscategorie />} />
-            <Route path="scategories/edit/:id" element={<Editscategorie />} />
-            <Route path="marques" element={<Listmarque />} />
-            <Route path="marques/add" element={<Insertmarque />} />
-            <Route path="marques/edit/:id" element={<Editmarque />} />
-            <Route path="/card" element={<ProductCard/>}/>
+
+          {/* 🔹 Routes avec Header & Footer */}
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Homebody />} />
+          <Route path="/card" element={<ProductCard />} />
+          <Route path="/page" element={<Page/>} />
+          
+        </Route>
+
+        {/* 🔹 Routes Admin (avec Sidebar) */}
+        <Route path="/admin" element={<AdminHome />}/>
+        <Route path="/products" element={<ProductAdmin />} />
+        <Route path="/category" element={<CategoryAdmin />} />
+        <Route path="/scategory" element={<ScategoryAdmin />} />
+        <Route path="/marque" element={<MarqueAdmin />} />
+        <Route path="/orders" element={<OrderAdmin />} />
+        <Route path="/users" element={<UserAdmin />} />
+        
+        
+          
+          
+        
+          <Route path="/produits" element={<Listproduit />} />
+          <Route path="/produits/add" element={<Insertproduit />} />
+          <Route path="/produits/edit/:id" element={<Editproduit />} />
+
+          <Route path="/categories" element={<Listcategorie />} />
+          <Route path="/categories/add" element={<Insertcategorie />} />
+          <Route path="/categories/edit/:id" element={<Editcategorie />} />
+
+          <Route path="/scategories" element={<Listscategorie />} />
+          <Route path="/scategories/add" element={<Insertscategorie />} />
+          <Route path="/scategories/edit/:id" element={<Editscategorie />} />
+
+          <Route path="/marques" element={<Listmarque />} />
+          <Route path="/marques/add" element={<Insertmarque />} />
+          <Route path="/marques/edit/:id" element={<Editmarque />} />
+        <Route path="/products" element={<ProductAdmin />} />
+        <Route path="/produits" element={<Listproduit />} />
+         
+          
+            {/* 🔹 Routes Auth (Accessibles sans Layout spécifique) */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/logout" element={<Logout />} />
+        <Route path="/register" element={<Register />} />
+            
+
           </Routes>
-          <Footer/>
+          
           </Router>        
         
         

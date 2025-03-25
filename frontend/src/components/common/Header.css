@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 /* Bannière promo */
 .promo-banner {
     display: flex;
@@ -278,12 +280,13 @@
   /* style.css */
   .card-container {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 10px;
     justify-items: center;
     align-items: start;
     padding: 20px;
   }
+  
   .card {
     background: #fff;
     border-radius: 15px;
@@ -292,7 +295,7 @@
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     position: relative;
     
-    max-height: 320px;
+    max-height: 500px;
     margin: 0px;
   }
 
@@ -302,9 +305,9 @@
   }
 
   .card img {
-    width: 100%;
+    width: 75%;
     height: 220px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #413e3e;
     transition: transform 0.3s ease-in-out;
     display: block;
     margin-left: auto;
@@ -343,7 +346,7 @@
     font-size: 0.75em;
     padding: 5px 12px;
     margin-top: 5px;
-    background-color:coral;
+    background-color:#ff5160;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -356,7 +359,7 @@
   }
 
   .card-button:hover {
-    background-color: #0056b3;
+    background-color: #98c4f4;
   }
 
   .card::before {
@@ -434,6 +437,10 @@
   .carousel {
     margin-bottom: 20px;
   }
+
+
+/*login */
+
   
 
  

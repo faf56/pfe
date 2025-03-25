@@ -1,5 +1,6 @@
 import React from 'react'
-import "./Header.css";
+
+import "./card.css"
 const Card = ({imagepro,title,prix}) => {
   return (
     <div className='card'>

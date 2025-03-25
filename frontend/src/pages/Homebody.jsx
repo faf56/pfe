@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./Header.css";
-import Card from './Card';
+
+import "../components/card/card.css";
+import Card from '../components/card/Card';
 import { Carousel, Row, Col } from "react-bootstrap";
 import {fetchnewproduit} from "../service/produitservice"
 
@@ -29,7 +29,7 @@ const Homebody = () => {
       return result;
     };
   
-    const productChunks = chunkArray(produits, 5);
+    const productChunks = chunkArray(produits, 4);
   return (
     <>
     <div>
@@ -101,7 +101,7 @@ const Homebody = () => {
         <Carousel indicators={false} interval={3000}>
           {productChunks.map((chunk, index) => (
             <Carousel.Item key={index}>
-              <Row className="card-container justify-content-center">
+              <Row className="card-container display-center ">
                 {chunk.map((pro, idx) => (
                   <Col key={idx} >
                     <Card

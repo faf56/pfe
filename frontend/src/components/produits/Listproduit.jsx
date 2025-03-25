@@ -4,6 +4,7 @@ import { CircularProgress } from '@mui/material';
 import {fetchproduits,deleteproduit} from '../../service/produitservice';
 import Insertproduit from './Insertproduit';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'react-bootstrap';
 
 
 
@@ -51,9 +52,9 @@ const handleDeleteProduct = async(productId) => {
   return (
     
     <div className="table-container-header">
-    <button className="new" onClick={handleShow}>
+    <Button className="new" onClick={handleShow}>
     <i className="fa-solid fa-plus-square"></i> Nouveau
-    </button>
+    </Button>
     {isPending ? (
     <div>
     <CircularProgress color="primary" size={60} />

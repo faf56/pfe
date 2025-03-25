@@ -55,7 +55,7 @@ const handleSubmit = async(event) => {
           console.log(file)
           const data = new FormData();
           data.append('file', file);
-          data.append('upload_preset', 'test2025');
+          data.append('upload_preset', 'perlaimg');
           data.append('cloud_name', 'dr09h69he');
           data.append('public_id', file.name);
           axios.post('https://api.cloudinary.com/v1_1/dr09h69he/image/upload', data)
@@ -170,8 +170,8 @@ onChange={(e) => setProduit({...produit,scategorieID:e.target.value})}
 <Modal.Footer>
 <button type="button" className="form-submit-button"
 onClick={(e)=>handleSubmit(e)}>Enregistrer</button>
-<button type="reset" className="form-reset-button"
-onClick={()=>handleClose()}>Annuler</button>
+<Button type="reset" className="form-reset-button"
+onClick={()=>handleClose()}>Annuler</Button>
 </Modal.Footer>
 </form>
 </Modal>
