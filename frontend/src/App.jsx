@@ -1,9 +1,11 @@
 import { BrowserRouter as Router,Routes, Route, Outlet } from "react-router-dom";
 import '@mui/material/styles';
 import React from 'react';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { CartProvider } from "use-shopping-cart";
 
 // Layouts
 import Header from "./components/common/Header";
@@ -63,6 +65,7 @@ function App() {
   return (
     
       <div>
+        <CartProvider>
         
          <Router>
           
@@ -118,7 +121,7 @@ function App() {
           
           </Router>        
         
-        
+          </CartProvider>
       </div>
       
     

@@ -107,6 +107,7 @@ const Homebody = () => {
                     <Card
                       imagepro={pro.imagepro}
                       title={pro.title}
+                      marqueID={pro.marqueID}
                       prix={pro.prix}
                     />
                   </Col>

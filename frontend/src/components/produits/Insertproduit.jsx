@@ -49,17 +49,17 @@ const handleSubmit = async(event) => {
         // Réinitialiser les champs du formulaire
         setProduit({})
         };
-        const serverOptions = () => { console.log('server pond');
+const serverOptions = () => { console.log('server pond');
           return {
           process: (fieldName, file, metadata, load, error, progress, abort) => {
           console.log(file)
           const data = new FormData();
           data.append('file', file);
-          data.append('upload_preset', 'perlaimg');
-          data.append('cloud_name', 'dr09h69he');
+         data.append('upload_preset', 'test2025');
+         data.append('cloud_name', 'dr09h69he');
           data.append('public_id', file.name);
           axios.post('https://api.cloudinary.com/v1_1/dr09h69he/image/upload', data)
-          .then((response) => response.data)
+           .then((response) => response.data)
           .then((data) => {
           console.log(data);
           setProduit({...produit,imagepro:data.url}) ;

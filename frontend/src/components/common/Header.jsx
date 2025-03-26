@@ -8,6 +8,9 @@ import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import Badge, { badgeClasses } from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCartOutlined';
+import CartDrawer from "../cart/CartDrawer"
+import { useState } from "react";
+
 
 const CartBadge = styled(Badge)`
   & .${badgeClasses.badge} {
@@ -19,7 +22,11 @@ const CartBadge = styled(Badge)`
 `;
 const Header = () => {
   const navigate = useNavigate();
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
+  const toggleCartDrawer = () => {
+    setDrawerOpen(!drawerOpen);
+  };
   return (
     <header>
       <div className="promo-banner">
@@ -57,12 +64,13 @@ const Header = () => {
             />
           </div>
           <i className="fa-regular fa-heart fa-xl"></i>
-          <IconButton>
+          <IconButton onClick={toggleCartDrawer}>
             <ShoppingCartIcon fontSize="large" sx={{ color: "black" }} />
             <CartBadge badgeContent={2}  overlap="circular"  />
           </IconButton>
         </div>
       </div>
+      
 
       <Navbar expand="lg" className="navbar">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -110,7 +118,7 @@ const Header = () => {
         </Navbar.Collapse>
       </Navbar>
 
-      
+      <CartDrawer drawerOpen={drawerOpen} toggleCartDrawer={toggleCartDrawer}/>
     </header>
   );
 };

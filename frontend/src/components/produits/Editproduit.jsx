@@ -126,7 +126,7 @@ const Editproduit = ({show,handleClose,pro,handleUpdateProduct}) => {
       <select
       id="marque"
       className="form-control"
-      value={produit.marqueID}
+      value={produit.marqueID._id}
       onChange={(e) => setProduit({...produit,marqueID:e.target.value})}
       >
       {marques.map((marq,index)=>
@@ -164,7 +164,7 @@ const Editproduit = ({show,handleClose,pro,handleUpdateProduct}) => {
       <select
       id="category"
       className="form-control"
-      value={produit.scategorieID}
+      value={produit.scategorieID._id}
       onChange={(e) => setProduit({...produit,scategorieID:e.target.value})}
       >
       {scategories.map((scat,index)=>

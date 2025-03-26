@@ -54,7 +54,7 @@ produits.map(pro =>({
         size: 150,
       },
       {
-        accessorKey: 'nommarque', // Ajout de la colonne
+        accessorKey: 'marqueID.nommarque', // Ajout de la colonne
         header: 'Marque',
         size: 150,
       },
@@ -63,7 +63,11 @@ produits.map(pro =>({
         header: 'Prix',
         size: 50,
       },
-      
+      {
+        accessorKey: 'scategorieID.nomscategorie', //normal accessorKey
+        header: 'Catégorie',
+        size: 50,
+      },
       {
         accessorKey: 'stock',
         header: 'Stock',
