@@ -11,7 +11,6 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCartOutlined';
 import CartDrawer from "../cart/CartDrawer"
 import { useState } from "react";
 
-
 const CartBadge = styled(Badge)`
   & .${badgeClasses.badge} {
     background-color: #DA4C4CFF;
@@ -27,6 +26,7 @@ const Header = () => {
   const toggleCartDrawer = () => {
     setDrawerOpen(!drawerOpen);
   };
+
   return (
     <header>
       <div className="promo-banner">
@@ -70,7 +70,6 @@ const Header = () => {
           </IconButton>
         </div>
       </div>
-      
 
       <Navbar expand="lg" className="navbar">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

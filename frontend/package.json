@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 9000",
+    "dev": "vite --port 1000",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -19,13 +19,13 @@
     "@mui/material": "^6.4.7",
     "@mui/styled-engine-sc": "^6.4.6",
     "@mui/x-date-pickers": "^7.27.3",
-    "@tailwindcss/vite": "^4.0.16",
     "@toolpad/core": "^0.12.1",
     "axios": "^1.8.2",
     "bootstrap": "^5.3.3",
     "filepond": "^4.32.7",
     "filepond-plugin-image-exif-orientation": "^1.0.11",
     "filepond-plugin-image-preview": "^4.6.12",
+    "frontend": "file:",
     "material-react-table": "^3.2.1",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.9",
@@ -49,7 +49,7 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
     "postcss": "^8.5.3",
-    "tailwindcss": "^4.0.16",
-    "vite": "^6.2.0"
+    "tailwindcss": "^4.0.13",
+    "vite": "^6.2.3"
   }
 }

@@ -1,6 +1,6 @@
 import axios from 'axios';
 axios.defaults.baseURL = "http://localhost:2000/api/"
-
+//axios.defaults.baseURL = "https://pfe2025.vercel.app/api/"
 //simple request sans header
 export function getAxiosInstance() {
     if (axios === null) {

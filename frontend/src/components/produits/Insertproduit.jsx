@@ -55,7 +55,7 @@ const serverOptions = () => { console.log('server pond');
           console.log(file)
           const data = new FormData();
           data.append('file', file);
-         data.append('upload_preset', 'test2025');
+         data.append('upload_preset', 'perlaimg');
          data.append('cloud_name', 'dr09h69he');
           data.append('public_id', file.name);
           axios.post('https://api.cloudinary.com/v1_1/dr09h69he/image/upload', data)

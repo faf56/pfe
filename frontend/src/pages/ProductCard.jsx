@@ -24,7 +24,7 @@ useEffect(()=>{
       key={index}
       imagepro={pro.imagepro}
       title={pro.title}
-      marqueID={pro.marqueID}
+      
       prix={pro.prix}
       />
     )}
